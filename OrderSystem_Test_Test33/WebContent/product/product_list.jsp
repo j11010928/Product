@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<%@page import="java.io.File"%>
+<%@page import="javax.imageio.ImageIO"%>
+<%@page import="com.sun.java.util.jar.pack.Package.File"%>
+<%@page import="java.awt.Graphics2D"%>
+<%@page import="javax.media.jai.JAI"%>
+<%@page import="javax.media.jai.RenderedOp"%>
+<%@page import="java.awt.image.renderable.ParameterBlock"%>
+<%@page import="java.awt.image.BufferedImage"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="product.vo.PageInfo"%>
@@ -15,7 +23,7 @@
 	int maxPage=pageInfo.getMaxPage();
 	int startPage=pageInfo.getStartPage();
 	int endPage=pageInfo.getEndPage();
-    
+	
     %>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -35,12 +43,14 @@
 			<tr>
 			<% 
 			for(int i = 0; i<productList.size();i++){
+			
+				
 			%>
 			
 	       	<td>
 <%-- 	       	<img src = "<%=productList.get(i).getItem_img() %>"> --%>
 	       <a href="ProductDetail.po?item_num=<%=productList.get(i).getItem_num()%>&page=<%=nowPage%>">
-						<img src = "<%=productList.get(i).getItem_img()%>">
+						<img src = "<%=productList.get(i).getItem_thumbnail()%>">
 				</a></td>
 			<td><%=productList.get(i).getItem_num() %></td>
 			<td><%=productList.get(i).getItem_name() %></td>

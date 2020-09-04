@@ -10,6 +10,7 @@ public class ProductBean {
 	private String item_category;
 	private String item_allergie;
 	private String item_img;
+	private String item_thumbnail;
 	private int item_show;
 	public int getItem_num() {
 		return item_num;
@@ -70,6 +71,12 @@ public class ProductBean {
 	}
 	public void setItem_show(int item_show) {
 		this.item_show = item_show;
+	}
+	public String getItem_thumbnail() {
+		return item_thumbnail;
+	}
+	public void setItem_thumbnail(String item_thumbnail) {
+		this.item_thumbnail = item_thumbnail;
 	}
 	
 	

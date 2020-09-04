@@ -44,7 +44,7 @@ public class ProductDAO {
 						
 			}
 			
-			sql = "INSERT INTO product VALUES(?,?,?,?,?,?,?,?,?,?)";
+			sql = "INSERT INTO product VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 			pstmt=con.prepareStatement(sql);
 			
 			pstmt.setInt(1,num);
@@ -57,6 +57,7 @@ public class ProductDAO {
 			pstmt.setString(8,pb.getItem_allergie());
 			pstmt.setString(9, pb.getItem_img());
 			pstmt.setInt(10,pb.getItem_show());
+			pstmt.setString(11, pb.getItem_thumbnail());
 			
 			insertProduct = pstmt.executeUpdate();
 		} catch (SQLException e) {
